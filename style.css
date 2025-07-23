@@ -90,3 +90,17 @@ body {
 .footer a:hover {
     text-decoration: underline;
 }
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 10px;
+}
+
+.footer-logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}

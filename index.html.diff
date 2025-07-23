@@ -1,0 +1,16 @@
+<p>Proudly hosted by:</p>
+                <a href="https://pages.github.com/"><img src="/img/GitHub_Logo_White.png" width="100"px alt="GitHub Logo" title="Click me to go to Github Pages!"></a>
+                <p>Powered by:</p>
+                <a href="https://jekyllrb.com/"><img src="/img/jekyll-logo-light-transparent.png" width="100"px alt="Jekyll Logo" title="Click me to go to the Jekyll website!"></a>
+
+            </footer>
+=======
+                <br>
+                <p>Proudly hosted by:</p>
+                <p>Powered by:</p>
+                <div class="footer-logos">
+                    <a href="https://pages.github.com/"><img src="/img/GitHub_Logo_White.png" width="100"px alt="GitHub Logo" title="Click me to go to Github Pages!"></a>
+                    <a href="https://jekyllrb.com/"><img src="/img/jekyll-logo-light-transparent.png" width="100"px alt="Jekyll Logo" title="Click me to go to the Jekyll website!"></a>
+                </div>
+
+            </footer>
