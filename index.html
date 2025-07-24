@@ -37,6 +37,17 @@
             <h1>Welcome!</h1>
             <p>Are you looking for the best sensory toys for you or someone you know? You've come to the right place!</p>
             <p>Our website is dedicated to helping parents, friends and caregivers find the perfect sensory toys.</p>
+            <br>
+            <hr>
+
+            <!-- Sensory Toy of the Day Section -->
+            <section id="toy-of-the-day" style="text-align:center; margin-top: 2em; padding: 1em; border: 2px solid #ccc; border-radius: 8px;">
+                <h2>Sensory Toy of the Day</h2>
+                <div id="toy-display">
+                    <p>Loading toy of the day...</p>
+                </div>
+            </section>
+            
         </div>
         </div>
         <div class="footer">
@@ -62,5 +73,77 @@
             </footer>
         </div>
     </div> 
-</body>
+    </body>
+    <script>
+        // Array of sensory toys with details
+        const sensoryToys = [
+            {
+                name: "Pop Its",
+                image: "/img/toys/popit.jpg",
+                description: "Pop its are cheap and simple sensory toys. They are great for people who enjoy popping and listening to the sounds. They can be gotten for around 3$ - 7$, depending on the size and design.",
+                buyLink: "https://www.amazon.co.uk/Silicon-Rainbow-Sensory-Learning-Educational/dp/B0D5HCCWZY/ref=sr_1_9?dib=eyJ2IjoiMSJ9.9lhUD9tQNZz1d4UJY4oPtMMrkq3f7f0cglaNvtSqHBg69v6Iz_l-Cs3s98HSBlvoBa6jyVAIKwmTwhMDzlcKUggTi6fPjgmsMFSsKllGOgjBZ791tbslc6JVX6ex1zd-pPkdAVhxWUagDANlEZyHgXH-Y5Mgxd3wxWz637bVnsHYrxNycLhhGK4DIyYQ3TUHOaCXbY5cz3NKHnF-qIkTbW9CW431fLiOX-Kc9nZrooQ_2TqZsVctfvjFaYPQmkk9iq0moS6wsY8xHFYHfPB7MRk9ZY8FmVpTxd_bRBiU2lc.L55NmjnEdH8tjmb-wQ5JVfbMDEKc78lczmCm-Wyfu4s&dib_tag=se&keywords=pop+it&qid=1753271702&sr=8-9"
+            },
+            {
+                name: "Fidget Cubes",
+                image: "/img/toys/cube.jpg",
+                description: "Fidget Cubes are small, dice-like fidget toys that easily fit in pockets, purses, or backpacks. They can be gotten for around 5$ - 10$, depending on the brand.",
+                buyLink: "https://www.amazon.co.uk/Yeefunjoy-Different-Functions-Classroom-Children/dp/B0BRN398PJ/ref=sr_1_10?crid=1V0KOTF8ZWCTW&dib=eyJ2IjoiMSJ9.GgaRDVcGUBg6VFBRwj45Ebzp3nKI9Lq5wosOpx7wIMbvdelXSuiLW3v7nk7VUyrbFiJIgo9rTjXUFpEtlabI8C79R7iaDh0vg5lA1V34BTWizFDOISXy6N5ooF3rLzk94UVaFz76gZ6zp9xoms4DfbsDUzRIoT2NnB1M9vtyaG5asdZXfzLz_gyMeeq4KgaeQKqiPnhuf82ls6WYN-fZBueEo7tRd9j6v34ba6oha_P0lq4yzWWVdgOUFOmZzSSgT7FmlML40lE5SlLMo0ILQ3ttXCDbgv1E0XSbM1kXY5Q.HivKrp1RqVOpHyXdbwgQLQgwSoo-YHLjSaZrzetfddA&dib_tag=se&keywords=fidget+cube&qid=1753277007&sprefix=fidget+cub%2Caps%2C165&sr=8-10"
+            },
+            {
+                name: "Sliders",
+                image: "/img/toys/slider.png",
+                description: "Sliders are small discs that slide together and apart. They use magnets, and usually come in sets of 3. They cost around 4$, and come in many designs, including food, cards, disks and rods.",
+                buyLink: "https://www.amazon.co.uk/Yeefunjoy-Sensory-Cookies-Magnetic-Anxiety/dp/B0C14MKGMD/ref=sr_1_6?dib=eyJ2IjoiMSJ9.LRZKhPAei47BISNJXWo9S8fmLRB0zZbdB5eQUu_TmMVIn1iTXufvPzGQdukSoWG9mij8MA2aJ91HZZf8GL3SQJkhFMvDCaCNRdQm4xmEiDtM8LVwCZkmUeDJme9eZlX_KmYa_P6qBBwwuYQ34USFS-oTvTNjI3jhHpCVKL_eQq5YpVWlvjrrWMb70QS3J6iI4UlaNA7_mCXlT5W51dMtUnQ6Wy_TwHlokt6wYOTd3-UjGBA7V7U0qI1OwhvsQkZsijmoWdMkHyaRAaTlMGFBsQx2CCLUoNEC0kIvvlKWVdA.pTfbzkxuSnMVwbErDWaHSPNNTlzNSqRbo_eNMdTvzgI&dib_tag=se&keywords=fidget+slider&qid=1753280763&sr=8-6"
+            },
+            {
+                name: "Liquid Timers",
+                image: "/img/toys/sensorytimer.jpg",
+                description: "Liquid Timers are like sand timers, but with a multicoloured liquid that drips down. The liquid then lands in a little compartment in the bottom, and is ready to be turned again. You can get them for around 7$ - 10$, depending on the size.",
+                buyLink: "https://www.amazon.co.uk/Sensory-Anxiety-Special-Fidget-Colour/dp/B095Q95RJX/ref=sr_1_9?dib=eyJ2IjoiMSJ9.yE-bO7DQvKDeKZARJD1e0sok2_nMNH3ntmfWFfFE-3PQ7WCoRUsS1X28OAfakJFTgBlBlKwLJHkctFKiIhBSNLuMsUAwj7kyFzZzc8PtRq6GGWvOOpsUvR1pLdpO56Q_h9h14OMqCIRkN3qMnbXPV0hQ5FL6H05vwB4CnyIEX_vLW2DDwt5Vrhw955x8ikjvMrYU5JKMSqwiywSbZWIOfiipIplry5xorENayrfimXI12aHWoaXQVIIFhQiPtDj3MqW1SFynOGhSZbk79X6JeNvAGQ4fZE_EHAIvkVLwd6w.eZ0eaNQz1BR-wGcTslHjxXmJHTmJyrLVzO4U-Sqdqd4&dib_tag=se&keywords=sensory%2Btoy&qid=1753348424&sr=8-9&th=1"
+            },
+            {
+                name: "Fish Sensory Lamps",
+                image: "/img/toys/fishlamp.png",
+                description: "These lamps are large, and designed to live in a room. They can cost up to 100$, but are usually 30$-50$. They are quite tall and they are designed to live in a room. If you couple one of these with a blackout blind and some other sensory toys, you have a sensory room!",
+                buyLink: "https://www.amazon.co.uk/Changing-Lighting-Tropical-Separate-Experience/dp/B0DNDM39J3/ref=sr_1_8?crid=B4BHMVPGQT0P&dib=eyJ2IjoiMSJ9.k0vcye-9oXy0nVS6xq5QFkUEem8BzAFCE0wecIZIWUWzxIc3Pyhp_iY88uvKgd842Ehho_0cBt4hW3_JjaVpU8lXehsiYtYYXVEZRpkIk0TBA_Q7Dd-Ws51xe6hkzneQffPfnUdPe_7oV19zXr8UGNe1SJwHd_15MvSyql5H_v9W3q7xe0zYyyrM4540-IquwiJSrZEM7X9qUQvamm_HIh0BP3ZjSzbEMJHGz_-oqV4LwawCTgolXoqnqtB1eoGPHCLJ9Lml8_cKdxMCVx_rf3OSDMt0_ExIyliRwZmwY10.c6Y937FCtqAZbdNrxhUwmRE5i87lHqfhtlEwh2iYyD0&dib_tag=se&keywords=fish+sensory+light&qid=1753349838&sprefix=fish+sens%2Caps%2C268&sr=8-8"
+            },
+            {
+                name: "Pop Tubes",
+                image: "/img/toys/poptube.jpg",
+                description: "Pop Tubes are cheap sensory toys that can be gotten from almost anywhere! Most supermarkets sell them down their toy aisle, and there are 100s of designs on Amazon! These fidget toys are small, ribbed tubes that make a sound when pulled out and pushed together. You can get them for around 1$ - 5$, depending on size and count.",
+                buyLink: "https://www.amazon.co.uk/VEYLIN-Sensory-Fidget-Toddler-Learning/dp/B09Z1SZ2V5/ref=sr_1_8?crid=XZQW4CNQWY6B&dib=eyJ2IjoiMSJ9.sWCoeTZGA2bOTNYWr-F_GfXOpGr7m0NKG2pvg84jyGuTLkn_GKupiCY31bllm9JXrQRUWgauEgMB3pX5ciylWAHPMybodNKZNwSv5Msdjgrd2C-IOKA2BwGMwzb7b_ujqsjrH7P9f3B_4YLBAiBQiKMe8N1Rg_k0VpJ4jwvNxBDZFyboUnW3TFPy1UJ2Sr1VJEK61NI7sy4Ms8JdV3CTRRywOKDXTBY5qvETyzBml6YUy5RWcCVGiiZ-PDYB31nANMwX-RprFeMn-qEXSXmpKiQGC8W79uwo0A4r4LHqTBU.6Gmo79X2GQla4NRvoIUrPdWFBxXn6E2OSudx9uXWJWE&dib_tag=se&keywords=pop%2Btubes%2Bsensory%2Btoys&qid=1753351526&sprefix=pop%2Btu%2Caps%2C223&sr=8-8&th=1"
+            }
+        ];
+
+        // Function to get the toy of the day based on current date in GMT
+        function getToyOfTheDay() {
+            const now = new Date();
+            // Get current date in GMT (year, month, day)
+            const gmtYear = now.getUTCFullYear();
+            const gmtMonth = now.getUTCMonth();
+            const gmtDate = now.getUTCDate();
+            // Create a date object for midnight GMT today
+            const gmtMidnight = new Date(Date.UTC(gmtYear, gmtMonth, gmtDate));
+            // Calculate the number of days since epoch (Jan 1, 1970)
+            const daysSinceEpoch = Math.floor(gmtMidnight.getTime() / (1000 * 60 * 60 * 24));
+            // Use modulo to cycle through the toys array
+            const toyIndex = daysSinceEpoch % sensoryToys.length;
+            return sensoryToys[toyIndex];
+        }
+
+        // Function to display the toy of the day in the section
+        function displayToyOfTheDay() {
+            const toy = getToyOfTheDay();
+            const toyDisplay = document.getElementById('toy-display');
+            toyDisplay.innerHTML = `
+                <h3>${toy.name}</h3>
+                <img src="${toy.image}" alt="${toy.name}" style="max-width: 250px; height: auto; border-radius: 8px; margin: 1em 0;">
+                <p>${toy.description}</p>
+                <a href="${toy.buyLink}" target="_blank" rel="noopener noreferrer" class="button">Buy on Amazon</a>
+            `;
+        }
+
+        // Run the display function on page load
+        window.onload = displayToyOfTheDay;
+    </script>
 </html>
