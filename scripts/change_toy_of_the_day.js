@@ -34,4 +34,4 @@ if (regex.test(content)) {
 }
 
 fs.writeFileSync(indexPath, content, 'utf8');
-console.log(`Toy of the day index set to ${toyIndex} in index.html`);
+console.log(`Toy of the day array set to ${toyIndex} in index.html`);
