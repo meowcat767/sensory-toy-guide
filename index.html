@@ -132,11 +132,23 @@
                 image: "/img/toys/poptube.jpg",
                 description: "Pop Tubes are cheap sensory toys that can be gotten from almost anywhere! Most supermarkets sell them down their toy aisle, and there are 100s of designs on Amazon! These fidget toys are small, ribbed tubes that make a sound when pulled out and pushed together. You can get them for around 1$ - 5$, depending on size and count.",
                 buyLink: "https://www.amazon.co.uk/VEYLIN-Sensory-Fidget-Toddler-Learning/dp/B09Z1SZ2V5/ref=sr_1_8?crid=XZQW4CNQWY6B&dib=eyJ2IjoiMSJ9.sWCoeTZGA2bOTNYWr-F_GfXOpGr7m0NKG2pvg84jyGuTLkn_GKupiCY31bllm9JXrQRUWgauEgMB3pX5ciylWAHPMybodNKZNwSv5Msdjgrd2C-IOKA2BwGMwzb7b_ujqsjrH7P9f3B_4YLBAiBQiKMe8N1Rg_k0VpJ4jwvNxBDZFyboUnW3TFPy1UJ2Sr1VJEK61NI7sy4Ms8JdV3CTRRywOKDXTBY5qvETyzBml6YUy5RWcCVGiiZ-PDYB31nANMwX-RprFeMn-qEXSXmpKiQGC8W79uwo0A4r4LHqTBU.6Gmo79X2GQla4NRvoIUrPdWFBxXn6E2OSudx9uXWJWE&dib_tag=se&keywords=pop%2Btubes%2Bsensory%2Btoys&qid=1753351526&sprefix=pop%2Btu%2Caps%2C223&sr=8-8&th=1"
+            },
+            {
+                name:"Wacky Tracks",
+                image: "/img/toys/wackytrack.jpg",
+                description: "Wacky Tracks are a type of fidget toy that is a long, plastic chain that snaps into position. They can be gotten for around 4$ - 6$, and normally in packs of 3 or 5.",
+                buyLink: "https://www.amazon.co.uk/Yeefunjoy-Sensory-Puzzles-Fillers-Favours/dp/B09X61VZ5T/ref=sr_1_24?crid=TZNVJDSZQH2Z&dib=eyJ2IjoiMSJ9.kHe__BEKfTKB-0erNoEJK9cl62qQRVK5z4RqbpDO0YM9IH695qwtXrnsHewfbxFHk-tvYhKJkes9osvioKUWGD01q0_lUH9ZRjlABo8TYCmIJ-ircpoXZLMIQo1cT6Q9kdQs4kDVaJsk8XQKAqan0JTiyRBDW-Y50KknIS2f6s4XwfUoIenfflQdyICj0aiy6bTzxFoyyC-JZaHKGBbT8l6N3WpsthOSoM-EJbs5twXRYm6RL9ZXa2wZkSyklYj0OAvfLoLF_1ZOXuIgwnW2zMzGNZfJxbeDXw-fkLct3Z4.Dc2HvK2zFLBYqfShaIyagHv7O_xjyrvbUVLu6au_t-I&dib_tag=se&keywords=fidget+toys&qid=1753460235&sprefix=fidget%2Caps%2C118&sr=8-24"
             }
+            
         ];
 
-        // Function to get the toy of the day based on current date in GMT
+        const currentToyIndexOverride = 6;
+
+        // Function to get the toy of the day based on current date in GMT or override
         function getToyOfTheDay() {
+            if (currentToyIndexOverride !== null && currentToyIndexOverride >= 0 && currentToyIndexOverride < sensoryToys.length) {
+                return sensoryToys[currentToyIndexOverride];
+            }
             const now = new Date();
             // Get current date in GMT (year, month, day)
             const gmtYear = now.getUTCFullYear();
