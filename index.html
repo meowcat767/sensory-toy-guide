@@ -150,7 +150,9 @@
             
         ];
 
-        const currentToyIndexOverride = 8;
+// set this to null when not being tested
+const currentToyIndexOverride = null;
+
 
         // Function to get the toy of the day based on current date in GMT or override
         function getToyOfTheDay() {
@@ -158,17 +160,23 @@
                 return sensoryToys[currentToyIndexOverride];
             }
             const now = new Date();
+            console.log("date for toy of the day:", now);
             // Get current date in GMT (year, month, day)
             const gmtYear = now.getUTCFullYear();
+            console.log(gmtYear)
             const gmtMonth = now.getUTCMonth();
+            console.log(gmtMonth)
             const gmtDate = now.getUTCDate();
+            console.log(gmtDate)
             // Create a date object for midnight GMT today
             const gmtMidnight = new Date(Date.UTC(gmtYear, gmtMonth, gmtDate));
             // Calculate the number of days since epoch (Jan 1, 1970)
             const daysSinceEpoch = Math.floor(gmtMidnight.getTime() / (1000 * 60 * 60 * 24));
+            console.log("epoch since Jan 1, 1970:", daysSinceEpoch);
             // Use modulo to cycle through the toys array
             const toyIndex = daysSinceEpoch % sensoryToys.length;
             return sensoryToys[toyIndex];
+            console.log("getToyOfTheDay function completed!")
         }
 
         // Function to display the toy of the day in the section
