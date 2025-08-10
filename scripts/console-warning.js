@@ -1,0 +1,1 @@
+console.log("Sensory Toy Guide - (C) Meowcat and Sensory Toy Guide authors. This software is provided with NO WARRENTY, to legal extent.")
